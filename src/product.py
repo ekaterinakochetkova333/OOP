@@ -1,6 +1,6 @@
 class Product:
     name: str
-    description : str
+    description: str
     price: float
     quantity: int
 
