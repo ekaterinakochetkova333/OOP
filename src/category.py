@@ -15,10 +15,8 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(list_products) if list_products else 0
 
-
     def add_product(self, products):
         self.__products.append(products)
-
 
     @property
     def products(self):
@@ -31,7 +29,3 @@ class Category:
     def products(self, products: Product):
         self.__products.append(products)
         Category.product_count += 1
-
-
-
-# Название продукта, 80 руб. Остаток: 15 шт.

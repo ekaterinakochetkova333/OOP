@@ -30,13 +30,3 @@ class Product:
         else:
             self.__price = price
             return
-
-
-
-
-
-
-
-
-
-
