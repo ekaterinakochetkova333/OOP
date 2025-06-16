@@ -17,6 +17,10 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(list_products) if list_products else 0
 
+    def __str__(self):
+        """Метод рассчитывает общее количество товаров на складе"""
+        return str(sum(map(lambda x: x.quantity, self.__products)))
+
     def add_product(self, products):
         """Метод добавления товара в категорию"""
         self.__products.append(products)
@@ -34,3 +38,5 @@ class Category:
     def products(self, products: Product):
         self.__products.append(products)
         Category.product_count += 1
+
+
