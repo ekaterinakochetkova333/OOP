@@ -14,19 +14,15 @@ class Product:
 
     def __str__(self):
         """Метод возвращает строку в формате: Название продукта, X руб. Остаток: X шт. """
-        return f'{self.name}, {self.price} руб. Остаток: {self.quantity} шт.'
+        return f"{self.name}, {self.price} руб. Остаток: {self.quantity} шт."
 
     def __add__(self, other):
-        """Метод возвращает сумму произведений цены на количество у двух объектов."""
+        """Метод возвращает сумму произведений цены у двух объектов."""
         return self.price + other.price
 
     @classmethod
     def new_product(cls, product):
         """Класс-метод, принимать на вход параметры товара в словаре и возвращает созданный объект класса Product."""
-        # name = product["name"]
-        # description = product["description"]
-        # price = product["price"]
-        # quantity = product["quantity"]
         return cls(**product)
 
     @property
