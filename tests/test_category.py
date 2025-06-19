@@ -22,5 +22,6 @@ def test_category_products_setter(category_init, product_init):
     category_init.products = product_init
     assert len(category_init.products) == 4
 
+
 def test_category_str(category_init):
     assert str(category_init) == "Смартфоны, количество продуктов: 27"

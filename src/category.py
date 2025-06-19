@@ -21,7 +21,6 @@ class Category:
         result = str(sum(map(lambda x: x.quantity, self.__products)))
         return f"{self.name}, {"количество продуктов:"} {result}"
 
-
     def add_product(self, products):
         """Метод добавления товара в категорию"""
         self.__products.append(products)
@@ -39,5 +38,3 @@ class Category:
     def products(self, products: Product):
         self.__products.append(products)
         Category.product_count += 1
-
-
