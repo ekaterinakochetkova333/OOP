@@ -17,6 +17,10 @@ class Category:
         Category.category_count += 1
         Category.product_count += len(list_products) if list_products else 0
 
+    def __str__(self):
+        result = str(sum(map(lambda x: x.quantity, self.__products)))
+        return f"{self.name}, {"количество продуктов:"} {result}"
+
     def add_product(self, products):
         """Метод добавления товара в категорию"""
         self.__products.append(products)
@@ -27,7 +31,7 @@ class Category:
         Название продукта, 80 руб. Остаток: 15 шт."""
         desc_products = []
         for products in self.__products:
-            desc_products.append(f'{products.name}, {products.price} руб. Остаток: {products.quantity} шт.')
+            desc_products.append(f"{str(products)}")
         return desc_products
 
     @products.setter
