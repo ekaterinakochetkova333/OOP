@@ -1,7 +1,5 @@
 import pytest
 
-from tests.conftest import smartphone2
-
 
 def test_lawngrass_init(lawngrass_init):
     """Тесты для проверки класса газонной травы"""

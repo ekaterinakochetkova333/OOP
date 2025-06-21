@@ -1,7 +1,5 @@
 import pytest
 
-from tests.conftest import smartphone2
-
 
 def test_init_category(category_init):
     """Тесты для проверки класса категорий"""
@@ -35,8 +33,3 @@ def test_category_str(category_init):
 def test_category_products_setter_error(category_init):
     with pytest.raises(TypeError):
         category_init.products = 1
-
-
-
-
-
