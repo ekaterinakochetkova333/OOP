@@ -35,6 +35,9 @@ class Category:
         return desc_products
 
     @products.setter
-    def products(self, products: Product):
-        self.__products.append(products)
-        Category.product_count += 1
+    def products(self, product):
+        if isinstance(product, Product):
+            self.__products.append(product)
+            Category.product_count += 1
+        else:
+            raise TypeError
