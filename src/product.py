@@ -1,4 +1,8 @@
-class Product:
+from src.base_product import BaseProduct
+from src.print_mixin import PrintMixin
+
+
+class Product(BaseProduct, PrintMixin):
     """Класс товаров"""
     name: str
     description: str
@@ -11,6 +15,8 @@ class Product:
         self.description = description
         self.__price = price
         self.quantity = quantity
+        super().__init__()
+
 
     def __str__(self):
         """Метод возвращает строку в формате: Название продукта, X руб. Остаток: X шт. """
@@ -21,7 +27,7 @@ class Product:
         return self.price + other.price
 
     @classmethod
-    def new_product(cls, product):
+    def new_product(cls, **product):
         """Класс-метод, принимать на вход параметры товара в словаре и возвращает созданный объект класса Product."""
         return cls(**product)
 
