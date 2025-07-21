@@ -33,3 +33,8 @@ def test_category_str(category_init):
 def test_category_products_setter_error(category_init):
     with pytest.raises(TypeError):
         category_init.products = 1
+
+
+def test_middle_price(middle_price_product, category_init):
+    assert middle_price_product.middle_price() == 0
+    assert category_init.middle_price() == 140333.33333333334

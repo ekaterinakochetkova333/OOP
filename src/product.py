@@ -11,12 +11,13 @@ class Product(BaseProduct, PrintMixin):
 
     def __init__(self, name, description, price, quantity):
         """Метод инициализации экземпляра класса. Значения атрибутов экземпляра."""
+        if quantity == 0:
+            raise ValueError("Товар с нулевым количеством не может быть добавлен")
+        self.quantity = quantity
         self.name = name
         self.description = description
         self.__price = price
-        self.quantity = quantity
         super().__init__()
-
 
     def __str__(self):
         """Метод возвращает строку в формате: Название продукта, X руб. Остаток: X шт. """
@@ -41,7 +42,5 @@ class Product(BaseProduct, PrintMixin):
         """Сеттер, проверяет цену товара на условие: цена равна или ниже нуля"""
         if float(price) <= 0:
             print("Цена не должна быть нулевая или отрицательная")
-            return
         else:
             self.__price = price
-            return
