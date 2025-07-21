@@ -43,6 +43,7 @@ class Category:
             raise TypeError
 
     def middle_price(self):
+        """Функция вычисляющая среднюю цену"""
         try:
             return sum([product.price for product in self.__products]) / len(self.__products)
         except ZeroDivisionError:
